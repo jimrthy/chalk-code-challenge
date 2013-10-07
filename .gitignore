@@ -1,3 +1,9 @@
+# Don't even want to ever be tempted to ever add this to source control
+.secret
+
+# FIXME: Move this to a more global setting
+*~
+
 *.gem
 *.rbc
 .bundle

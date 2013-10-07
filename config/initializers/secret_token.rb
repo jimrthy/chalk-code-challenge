@@ -9,4 +9,18 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-GenderGuess::Application.config.secret_key_base = 'ceee6a0a38ebe0eb9c0d7f271fca93fc11718072507b799510aa7665a0b82a1ce571a6ac7775c29d5bc7cffade229495a4c2a1a578be6b0259f5da3517681c49'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+GenderGuess::Application.config.secret_key_base = secure_token

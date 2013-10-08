@@ -1,6 +1,13 @@
 -provide(:title, 'Guess Gender')
 %h1 Let Us Pigeonhole Someone!
 
+= form_tag('/guess', method: 'get') do
+  = label_tag(:height, "Height:")
+  = text_field_tag(:height)
+  = label_tag(:weight, "Weight:")
+  = text_field_tag(:weight)
+  = submit_tag("Pigeon Hole")
+
 %p Based on the latest scientific advancements in
 phrenology, reflexology, astrology, and anusology,
 I'll try to label a human as either male or female.

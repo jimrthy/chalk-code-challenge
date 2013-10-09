@@ -3,9 +3,9 @@
 
 = form_tag('/guess', method: 'get') do
   = label_tag(:height, "Height (inches or centimeters):")
-  = text_field_tag(:height)
+  = number_field_tag(:height, 0, min: 1)
   = label_tag(:mass, "Mass (pounds or kilograms):")
-  = text_field_tag(:mass)
+  = number_field_tag(:mass, 0, min: 1)
   %div.row
     %div.large-1.columns 
       = radio_button_tag(:units, "metric", checked=true)

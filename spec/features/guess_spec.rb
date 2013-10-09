@@ -5,7 +5,7 @@ feature "Guess" do
     visit root_path
 
     fill_in "height", :with => '68'
-    fill_in "weight", :with => '150'
+    fill_in "mass", :with => '150'
     click_button "Pigeon Hole"
 
     # This is a lame test...at the very least, this should be

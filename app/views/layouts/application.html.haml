@@ -1,13 +1,19 @@
 !!! 5
-%haml
-%head
-  %title= yield(:title)
+!= cc_html(:lang => 'en') do
+  %head
+    %meta(charset='UTF-8')
+
+    -# Set viewport width to device width for mobile
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
   
-  = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-  = javascript_include_tag "application", "data-turbolinks-track" => true
-  = csrf_meta_tags
+    %title= content_for?(:title) ? yield(:title) : "Guess Gender"
 
-%body
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "vendor/custom.modernizr" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
 
-  = yield
+    %body
+
+      = yield
 

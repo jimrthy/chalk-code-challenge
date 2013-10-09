@@ -2,9 +2,9 @@
 %h1 Let Us Pigeonhole Someone!
 
 = form_tag('/guess', method: 'get') do
-  = label_tag(:height, "Height:")
+  = label_tag(:height, "Height (inches or centimeters):")
   = text_field_tag(:height)
-  = label_tag(:mass, "Mass:")
+  = label_tag(:mass, "Mass (pounds or kilograms):")
   = text_field_tag(:mass)
   %div.row
     %div.large-1.columns 

@@ -42,8 +42,10 @@ end
 # Use SCSS for stylesheets
 gem 'sass-rails', '4.0.0'
 
+# Foundation Layout
 gem 'zurb-foundation', '4.3.2'
 
+# Markdown
 gem 'redcarpet', '3.0.0'
 
 # Use Uglifier as compressor for JavaScript assets

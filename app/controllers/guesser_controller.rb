@@ -3,7 +3,9 @@ class GuesserController < ApplicationController
     begin
       height = params['height']
       mass = params['mass']
-      if height and mass
+      if height.nil? or mass.nil? or height.empty? or mass.empty?
+        render(:file => File.join(Rails.root, 'public/missing.html'), :status => 403, :layout => false)
+      else
         height = Integer(height, 10)
         mass = Integer(mass, 10)
 
@@ -32,13 +34,9 @@ class GuesserController < ApplicationController
             @gender = g > 0.5 ? "male" : "female"
           end
         end
-      else
-        # FIXME: Return a useful error page
-        #render(:file => File.join(Rails.root, 'public/400.html', :status => 400, :layout => false)
-        head 403
       end
     rescue ArgumentError => e
-      head 403
+      render(:file => File.join(Rails.root, 'public/corrupt.html'), :status => 403, :layout => false)
     end
   end
 end

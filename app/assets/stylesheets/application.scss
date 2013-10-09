@@ -12,3 +12,27 @@
  *= require foundation_and_overrides
  *= require_tree .
  */
+
+/* Site-wide color scheme.
+ * It seems nice in theory (aside from not working), though it doesn't seem to be working. */
+
+$background: #818181;
+
+/* Reddish-brown */
+$primary-color: #754427;
+/* Really dark brown */
+$header-font-color: #28170e;
+/* Brown */
+$subheader-font-color: #4e3e1b;
+$small-font-color: $primary-color;
+/* Purplish */
+$anchor-font-color-hover: #2f1e52;
+$microformat-border-color: #676767;
+
+body,html {
+    background:$background;
+}
+
+.top-bar {
+    background:$background;
+}

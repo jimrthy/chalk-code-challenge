@@ -14,6 +14,27 @@
     = csrf_meta_tags
 
     %body
+      %nav.top-bar
+        %ul.title-area
+        %ul.left
+          %li.divider
+          %li.active 
+            = link_to image_tag('logo.png', alt: "Gender Guess"), root_path
+          %li.divider
+        %ul.right
+          %li.active
+            = link_to "About", about_path
+          %li.divider
+          %li.active
+            = link_to "Help", help_path
 
-      = yield
+      %div.row
+        -# Add some padding for big screens
+        %div.large-1.columns
+        %div.large-10.small-12.columns
+          = yield
+        %div.large-1.columns
+
+      %div.row
+        %h2 Footer
 

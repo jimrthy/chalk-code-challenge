@@ -1,4 +1,9 @@
 module GuesserHelper
+  # These are actually used from the controller. The helpers
+  # are meant to be used from the View, which never touches
+  # this.
+  # TODO: Move this somewhere that makes more sense.
+
   def inches_to_centimeters(inches)
     # 1 ft  == 0.3048 m == 304.8 cm
     # =>

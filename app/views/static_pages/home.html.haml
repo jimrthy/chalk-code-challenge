@@ -2,17 +2,17 @@
 %h1 Let Us Pigeonhole Someone!
 
 = form_tag('/guess', method: 'get') do
-  = label_tag(:height, "Height (inches or centimeters):")
+  = label_tag#height(:height, "Height (centimeters):")
   = number_field_tag(:height, 0, min: 1)
-  = label_tag(:mass, "Mass (pounds or kilograms):")
+  = label_tag#mass(:mass, "Mass (kilograms):")
   = number_field_tag(:mass, 0, min: 1)
   %div.row
     %div.large-1.columns 
       = radio_button_tag(:units, "metric", checked=true)
-      = label_tag(:units_metric, "Metric")
+      = label_tag#metric_label(:units_metric, "Metric")
     %div.large-11.columns
       = radio_button_tag(:units, "American")
-      = label_tag(:units_american, "American")
+      = label_tag#American_units(:units_american, "American")
   = submit_tag("Pigeon Hole", class: "button radius")
 
 :markdown

@@ -8,10 +8,10 @@
   = number_field_tag(:mass, 0, min: 1)
   %div.row
     %div.large-1.columns 
-      = radio_button_tag(:units, "metric", checked=true)
+      = radio_button_tag(:units, "metric", checked=true, id: "metric_units")
       = label_tag(:units_metric, "Metric")
     %div.large-11.columns
-      = radio_button_tag(:units, "American")
+      = radio_button_tag(:units, "American", nil, id: "American_units")
       = label_tag(:units_american, "American")
   = submit_tag("Pigeon Hole", class: "button radius")
 

@@ -2,11 +2,17 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).ready ->
-  alert("Loaded")
-
-  $('[name="American"]').click ->
-    alert "Clicked!"
+$ ->
+  $('#American_units').click ->
+    # alert("American Clicked!")
+    # Syntax differences below don't seem to make any difference.
     $('#height').text("Height (inches)")
     $('label#mass').text("Mass (pounds)")
+
+$ ->
+  $('#metric_units').click ->
+    # alert("Metric Clicked!")
+    # Syntax differences below don't seem to make any difference.
+    $('#height').text("Height (centimeters)")
+    $('label#mass').text("Mass (kilograms)")
 

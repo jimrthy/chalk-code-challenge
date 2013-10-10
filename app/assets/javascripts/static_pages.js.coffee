@@ -2,7 +2,11 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-jQuery ->
-       $('[name="American"]').on "click", (event) ->
-              $('label#height').text("Height (inches)")
-	      $('label#mass').text("Mass (pounds)")
+$(document).ready ->
+  alert("Loaded")
+
+  $('[name="American"]').click ->
+    alert "Clicked!"
+    $('#height').text("Height (inches)")
+    $('label#mass').text("Mass (pounds)")
+

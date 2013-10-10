@@ -11,5 +11,14 @@ require 'spec_helper'
 #   end
 # end
 describe GuesserHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "metric->American" do
+    it "inches->centimeters" do
+      cms = helper.inches_to_centimeters 500
+      Integer(cms).should == 127
+    end
+
+    it "pounds->kilos" do
+      Integer(helper.pounds_to_kilos 500).should == 226
+    end
+  end
 end
